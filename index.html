@@ -18,6 +18,17 @@
         margin: 5px; background-color: deeppink; border-color: deeppink;}
 
     </style>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent the form from being submitted traditionally
+
+            // Get the selected fruit value
+            const selectedNut = document.getElementById("Nuts").value;
+
+            // Process the selected fruit (e.g., display it in an alert)
+            alert("You selected: " + selectedNut + " me personally your my favourite");
+        }
+    </script>
 </head>
 <body>
     <h1>DEEZ NUTs</h1>
@@ -60,7 +71,7 @@
     </section>
     <h2>Select Your Favorite Nut</h2>
 
-    <form action="#" method="POST">
+    <form id="NutsForm">
         <label for="Nuts">Choose your favorite nut:</label>
         <select id="Nuts" name="Nuts">
             <option value="almond">Almonds</option>
@@ -74,9 +85,12 @@
         <br><br>
         <input type="submit" value="Submit">
     </form>
-
+    <script>
+        // Attach the handleSubmit function to the form's submit event
+        document.getElementById("NutsForm").addEventListener("submit", handleSubmit);
+    </script>
     <footer>
-        <p>Be sure to enjoy your nuts in moderation as part of a balanced diet!</p>
+        <p>Be sure to enjoy your nuts(mine) in moderation as part of a balanced diet!</p>
     </footer>
 </body>
 </html>
